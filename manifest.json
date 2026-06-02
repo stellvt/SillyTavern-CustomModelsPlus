@@ -1,11 +1,11 @@
 {
-    "display_name": "Custom Models",
+    "display_name": "SillyTavern-CustomModelsPlus",
     "loading_order": 100,
     "requires": [],
     "optional": [],
     "js": "index.js",
     "css": "style.css",
-    "author": "LenAnderson",
-    "version": "1.3.0",
-    "homePage": "https://github.com/LenAnderson/SillyTavern-CustomModels"
+    "author": "LenAnderson, fork by Aster/a/",
+    "version": "2.0.0",
+    "homePage": "https://github.com/stellvt/SillyTavern-CustomModelsPlus"
 }

@@ -1,4 +1,58 @@
 .stcm--btn {
-  display: inline-block;
-  margin-left: 1em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.5em;
+  vertical-align: middle;
+}
+
+.stcm--editor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.stcm--editor h3,
+.stcm--editor h4 {
+  margin: 0;
+}
+
+.stcm--label,
+.stcm--label-text {
+  font-weight: 600;
+}
+
+.stcm--models-textarea,
+.stcm--params-textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+.stcm--params-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stcm--params-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.75rem;
+}
+
+.stcm--field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.stcm--hint {
+  opacity: 0.75;
+}
+
+@media (max-width: 720px) {
+  .stcm--params-grid {
+    grid-template-columns: 1fr;
+  }
 }
