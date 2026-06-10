@@ -378,7 +378,23 @@ async function openEditor(config, control) {
 
     refreshTargetList();
 
-    const result = await popupCaller(dom, popupType.TEXT, null, { okButton: 'Save', wide: true, large: true });
+    const result = await popupCaller(dom, popupType.TEXT, null, {
+        okButton: 'Save',
+        wide: true,
+        large: true,
+        allowVerticalScrolling: true,
+        onOpen: (popup) => {
+            const scroller = popup?.content ?? dom.closest('.popup-content, #dialogue_popup_text');
+            popup?.dlg?.classList.add('stcm--popup');
+            if (scroller) {
+                scroller.classList.add('stcm--popup-scroll');
+                scroller.scrollTop = 0;
+                requestAnimationFrame(() => {
+                    scroller.scrollTop = 0;
+                });
+            }
+        },
+    });
 
     if (result === popupResult.AFFIRMATIVE) {
         saveActiveOverride();

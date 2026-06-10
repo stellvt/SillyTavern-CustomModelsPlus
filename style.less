@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  min-height: 0;
   text-align: left;
 
   h3,
@@ -54,5 +55,18 @@
 @media (max-width: 720px) {
   .stcm--params-grid {
     grid-template-columns: 1fr;
+  }
+
+  .popup.stcm--popup .popup-content,
+  .stcm--popup-scroll,
+  .popup.vertical_scrolling_dialogue_popup .popup-content:has(.stcm--editor),
+  #dialogue_popup_text:has(.stcm--editor) {
+    max-height: calc(100dvh - 8rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: 1rem;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
   }
 }
